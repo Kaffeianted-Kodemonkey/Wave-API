@@ -1,0 +1,187 @@
+
+{
+   "status":{
+      "success":true,
+      "httpstatuscode":200
+   },
+   "statistics":{
+      "pagetitle":"Google",
+      "pageurl":"google.com",
+      "time":1.27,
+      "allitemcount":20,
+      "totalelements":186,
+      "waveurl":"http:\/\/wave.webaim.org\/report?url=http:\/\/google.com\/"
+   },
+   "categories":{
+      "error":{
+         "description":"Errors",
+         "count":4,
+         "items":{
+            "language_missing":{
+               "id":"language_missing",
+               "description":"Document language missing",
+               "count":1,
+               "xpaths":[
+                  "#"
+               ]
+            },
+            "alt_spacer_missing":{
+               "id":"alt_spacer_missing",
+               "description":"Spacer image missing alternative text",
+               "count":1,
+               "xpaths":[
+                  "\/BODY[1]\/CENTER[1]\/SPAN[1]\/DIV[1]\/DIV[1]\/TABLE[1]\/TBODY[1]\/TR[2]\/TD[1]\/IMG[1]"
+               ]
+            },
+            "link_empty":{
+               "id":"link_empty",
+               "description":"Empty link",
+               "count":1,
+               "xpaths":[
+                  "\/BODY[1]\/DIV[1]\/DIV[1]\/DIV[1]\/DIV[2]\/OL[1]\/LI[3]\/A[1]"
+               ]
+            },
+            "label_missing":{
+               "id":"label_missing",
+               "description":"Missing form label",
+               "count":1,
+               "xpaths":[
+                  "\/BODY[1]\/TEXTAREA[1]"
+               ]
+            }
+         }
+      },
+      "alert":{
+         "description":"Alerts",
+         "count":5,
+         "items":{
+            "h1_missing":{
+               "id":"h1_missing",
+               "description":"Missing first level heading",
+               "count":1,
+               "xpaths":[
+                  "#"
+               ]
+            },
+            "title_redundant":{
+               "id":"title_redundant",
+               "description":"Redundant title text",
+               "count":1,
+               "xpaths":[
+                  "\/BODY[1]\/CENTER[1]\/DIV[1]\/A[1]\/IMG[1]"
+               ]
+            },
+            "label_title":{
+               "id":"label_title",
+               "description":"Unlabeled form element with title",
+               "count":1,
+               "xpaths":[
+                  "\/BODY[1]\/CENTER[1]\/FORM[1]\/TABLE[1]\/TBODY[1]\/TR[1]\/TD[2]\/DIV[1]\/INPUT[1]"
+               ]
+            },
+            "link_suspicious":{
+               "id":"link_suspicious",
+               "description":"Suspicious link text",
+               "count":1,
+               "xpaths":[
+                  "\/BODY[1]\/DIV[1]\/DIV[1]\/DIV[1]\/DIV[1]\/OL[1]\/LI[9]\/A[1]"
+               ]
+            },
+            "heading_skipped":{
+               "id":"heading_skipped",
+               "description":"Skipped heading level",
+               "count":1,
+               "xpaths":[
+                  "\/BODY[1]\/DIV[1]\/DIV[1]\/DIV[1]\/DIV[2]\/H2[1]"
+               ]
+            }
+         }
+      },
+      "feature":{
+         "description":"Features",
+         "count":1,
+         "items":{
+            "alt_link":{
+               "id":"alt_link",
+               "description":"Linked image with alternative text",
+               "count":1,
+               "xpaths":[
+                  "\/BODY[1]\/CENTER[1]\/DIV[1]\/A[1]\/IMG[1]"
+               ]
+            }
+         }
+      },
+      "structure":{
+         "description":"Structural Elements",
+         "count":6,
+         "items":{
+            "table_layout":{
+               "id":"table_layout",
+               "description":"Layout table",
+               "count":3,
+               "xpaths":[
+                  "\/BODY[1]\/CENTER[1]\/FORM[1]\/TABLE[1]\/TBODY[1]\/TR[1]\/TD[1]",
+                  "\/BODY[1]\/CENTER[1]\/SPAN[1]\/DIV[1]\/DIV[1]\/TABLE[1]\/TBODY[1]\/TR[1]\/TD[1]",
+                  "\/BODY[1]\/TABLE[1]\/TBODY[1]\/TR[1]\/TD[1]"
+               ]
+            },
+            "ol":{
+               "id":"ol",
+               "description":"Ordered list",
+               "count":1,
+               "xpaths":[
+                  "\/BODY[1]\/DIV[1]\/DIV[1]\/DIV[1]\/DIV[1]\/OL[1]\/LI[1]"
+               ]
+            },
+            "h2":{
+               "id":"h2",
+               "description":"Heading level 2",
+               "count":1,
+               "xpaths":[
+                  "\/BODY[1]\/DIV[1]\/DIV[1]\/DIV[1]\/DIV[2]\/H2[1]"
+               ]
+            },
+            "iframe":{
+               "id":"iframe",
+               "description":"Inline Frame",
+               "count":1,
+               "xpaths":[
+                  "\/BODY[1]\/IFRAME[1]"
+               ]
+            }
+         }
+      },
+      "html5":{
+         "description":"HTML5 and ARIA",
+         "count":4,
+         "items":{
+            "aria":{
+               "id":"aria",
+               "description":"ARIA",
+               "count":4,
+               "xpaths":[
+                  "\/BODY[1]\/DIV[1]\/DIV[1]\/DIV[1]\/DIV[1]\/OL[1]\/LI[9]\/A[1]",
+                  "\/BODY[1]\/DIV[1]\/DIV[1]\/DIV[1]\/DIV[1]\/OL[1]\/LI[9]\/DIV[1]",
+                  "\/BODY[1]\/DIV[1]\/DIV[1]\/DIV[1]\/DIV[2]\/OL[1]\/LI[3]\/A[1]",
+                  "\/BODY[1]\/DIV[1]\/DIV[1]\/DIV[1]\/DIV[2]\/OL[1]\/LI[3]\/DIV[1]"
+               ]
+            }
+         }
+      },
+      "contrast":{
+         "description":"Contrast Errors",
+         "count":2,
+         "items":{
+            "contrast":{
+               "id":"contrast",
+               "description":"Very Low Contrast",
+               "count":2,
+               "xpaths":[
+                  "\/BODY[1]\/DIV[1]\/DIV[1]\/DIV[1]\/DIV[1]\/OL[1]\/LI[1]\/A[1]",
+                  "\/BODY[1]\/DIV[1]\/DIV[1]\/DIV[1]\/DIV[1]\/OL[1]\/LI[2]\/A[1]"
+               ]
+            }
+         }
+      }
+   }
+}

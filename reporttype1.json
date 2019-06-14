@@ -1,0 +1,41 @@
+{
+   "status":{
+      "success":true,
+      "httpstatuscode":200
+   },
+   "statistics":{
+      "pagetitle":"Google",
+      "pageurl":"google.com",
+      "time":1.27,
+      "creditsremaining":97,
+      "allitemcount":21,
+      "totalelements":178,
+      "waveurl":"http:\/\/wave.webaim.org\/report?url=http:\/\/google.com\/"
+   },
+   "categories":{
+      "error":{
+      	 "description":"Errors",
+         "count":4
+      },
+      "alert":{
+         "description":"Alerts",
+         "count":5
+      },
+      "feature":{
+         "description":"Features",
+         "count":1
+      },
+      "structure":{
+         "description":"Structural Elements",
+         "count":5
+      },
+      "html5":{
+         "description":"HTML and ARIA",
+         "count":4
+      },
+      "contrast":{
+         "description":"Contrast Errors",
+         "count":2
+      }
+   }
+}
