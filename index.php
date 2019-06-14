@@ -19,7 +19,7 @@
       </div>
 
       <hr />
-      
+
       <div class="container mt-5">
         <div class="row mb-5">
           <div class="col">
@@ -30,60 +30,35 @@
 
         <div class="row">
           <div class="col">
-            <form action="api_script.php" method="post" enctype="multipart/form-data">
+            <form action="scripts/file_upload.php" method="post" enctype="multipart/form-data">
               <div class="form-group row">
-                <label for="client" class="col-sm-2 col-form-label">Compan Name:</label>
+                <label for="client" class="col-sm-3 col-form-label">Compan Name:</label>
                 <div class="col-sm-6">
-                  <input type="text" class="form-control" name="client" id="client" placeholder="Company or Client Name">
+                  <input type="text" class="form-control" name="client" id="client" placeholder="Company or Client Name" required>
                 </div>
               </div>
 
-              <!-- enter number of url/pages -->
-              <div class="border border-dark p-2 mb-3">
-                <div class="form-group row">
-                  <label for="pages" class="col-sm-2 col-form-label">Number of Pages:</label>
-                  <div class="col-sm-6">
-                    <input type="text" class="form-control" name="num_pages" id="num_pages" placeholder="# of Page to evaluate">
-                  </div>
-                </div>
-
-                <div id="URLList"></div>
-              </div>
-
-              <!-- or uploade sitmap.xml for larger sites -->
-              <div class="border border-dark p-2 mb-3">
-                <div class="form-group row">
-                  <label for="sitemap" class="col-sm-2 col-form-label">Upload sitmap:</label>
-                  <div class="col-sm-6">
-                    <input type="file" class="form-control" name="sitemap" id="sitemap" placeholder="upload sitemap.xml">
-                  </div>
-                </div>
-              </div>
-              <!-- end sitmpa upload -->
-
-              <div class="form-group row">
-                <label for="reporttype" class="col-sm-2 col-form-label">Reprot Type:</label>
-                <div class="col-sm-6">
-                  <select class="custom-select custom-select-md mb-3" name="reporttype">
-                    <option value="3"selected>Select Leve</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="username" class="col-sm-2 col-form-label">Username:</label>
+              <!-- <div class="form-group row">
+                <label for="username" class="col-sm-3 col-form-label">Username:</label>
                 <div class="col-sm-6">
                   <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
                 </div>
               </div>
               <div class="form-group row">
-                <label for="password" class="col-sm-2 col-form-label">Password</label>
+                <label for="password" class="col-sm-3 col-form-label">Password</label>
                 <div class="col-sm-6">
                   <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
                 </div>
+              </div> -->
+
+              <!--  uploade sitmap.xml or csv for larger sites -->
+              <div class="form-group row">
+                <label for="fupload" class="col-sm-3 col-form-label mt-1">Upload Sitmap or CSV:</label>
+                <div class="col-sm-6">
+                  <input type="file" class="mt-2" name="fupload" id="fupload" required>
+                </div>
               </div>
+              <!-- end sitmpa upload -->
 
               <div class="form-group row">
                 <div class="col-sm-10">
