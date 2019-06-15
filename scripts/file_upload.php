@@ -17,7 +17,8 @@
       //  echo $upload;
 
   }else{
-    echo "Please upload a file.";
+    $e = 1;
+    $error = "Please upload a file.";
   }
 
 ?>
@@ -34,6 +35,8 @@
     <title>File upload</title>
   </head>
   <body>
+    <?php include '../includes/nav.php';?>
+
     <section id="main" role="main">
       <div class="row">
         <div class="col mt-5">
@@ -45,9 +48,18 @@
 
       <div class="container mt-5">
         <div class="row">
-          <div class="col">
-            <?php echo $upload; ?> <button class="btn btm-sm btn-success">Evaluate</button>
+          <?php
+            if($e == 1){
+              echo "<div class='col text-center'>" . $error . "</div>";
+            }else{
+          ?>
+          <div class="col-4 mt-2">
+            <?php echo $upload; ?>
           </div>
+          <div class="col">
+            <button class="btn btm-sm btn-success" href="Evaluate.php">Evaluate</button>
+          </div>
+        <?php } ?>
         </div>
       </div>
     </section>

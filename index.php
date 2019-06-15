@@ -11,6 +11,7 @@
     <title>WAVE-API</title>
   </head>
   <body>
+    <?php include 'includes/nav.php'; ?>
     <section id="main" role="main">
       <div class="row">
         <div class="col mt-5">
