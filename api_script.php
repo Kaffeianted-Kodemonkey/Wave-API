@@ -11,7 +11,7 @@ include 'functions.php'; ?>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-      <title>WAVE-API - Request</title>
+      <title>WAVE-API - Live</title>
   </head>
   <body>
 
@@ -24,34 +24,8 @@ include 'functions.php'; ?>
         $user = $_POST['username'];
         $pass = $_POST['password'];
         $client = $_POST['client'];
-
+        //$pgcount = $_POST['num_pages'];
         $filename = $client . ".doc";
-
-        // call function to upload file
-        /*if(empty($_POST['num_pages'])){
-          $sitemap = file_upload($_FILES['sitemap']);
-
-          echo "<hr />";
-
-          //Read file add convert to array
-          if($sitemap['type'] == "text/csv"){
-            $csv = array_map('str_getcsv', file("upload/" . $sitemap['name']));
-
-            $set = 1; // This is set by an array length and need to start on 0
-            $pgcount = sizeof($csv); // get number of items in array to loop through
-
-            foreach($csv as $k => $v){
-              foreach ($v as $key => $value) {
-                echo $value ."<br />";
-              }
-            }
-          }
-        }else{
-          $pgcount = $_POST['num_pages'];
-          $set = 1; // this base on a given number need to start count on 1
-        }
-
-        exit();*/
 
         // call function to upload file
         if(empty($_POST['num_pages'])){
@@ -130,7 +104,7 @@ include 'functions.php'; ?>
           <h2>Evaluation Script:</h2>";
 
         ## Set Variables ##
-        for($i=$set; $i<$pgcount; $i++){
+        for($i=$set; $i<=$pgcount; $i++){
           $x = $x+1;
 
           if($mkr == 1){
@@ -139,7 +113,7 @@ include 'functions.php'; ?>
             $siteURL = $_POST['url-'.$i];
           }
 
-          ## Testing URLS
+            ## Testing URLS ##
             //$url = "kkm.json";
             //$url = "reporttype1.json";
             //$url = "reporttype2.json";
@@ -147,9 +121,9 @@ include 'functions.php'; ?>
             /*$url = "reporttype3.json";
             $data = file_get_contents($url);*/
 
-          ## End Testing URLS
+          ## End Testing URLS ##
 
-          ## WAVE-API URL
+          ## WAVE-API URL ##
           $url = "http://wave.webaim.org/api/request?";
           $apiurl = $url . "key=" . $apikey ."&url=" . $siteURL ."&evaldelay=2000&reporttype=" . $reporttype . "&username=" .$user . "&password=" . $pass;
 
@@ -174,21 +148,19 @@ include 'functions.php'; ?>
           ## Check if status-success is true ##
           if($success = 1){
             $filetext .= "
-            <table border='0' width='100%'>
-              <tr>
-                <th colspan='2' align='center'>Page - " . $x . "</th>
-              </tr>
-              <tr>
-                <td>Title: " . $pagetitle . "</td>
-                <td align='right'>Total Issues Found:</strong> " . $allitemcount . "</td>
-              </tr>
-              <tr>
-                <td>Page URL: " . $pageurl . "</td>
-                <td align='right'>Total Elements Evaluated:</strong> " . $totalelements . "</td>
-              </tr>
-            </table>
+              <p> [Web Page ". $x . " ] </p>
 
-            <p class='text-danger'><strong>Credits Remaining:</strong>" . $credits . "</p>";
+              <p>Title: " . $pagetitle . "</p>
+              <p>URL: " . $pageurl . "</p>
+
+              <table border='0' width='100%'>
+                <tr>
+                  <td align='left'>Total Issues Found:</strong> " . $allitemcount . "</td>
+                  <td align='right'>Total Elements Evaluated:</strong> " . $totalelements . "</td>
+                </tr>
+              </table>
+
+              <p class='text-danger'><strong>Credits Remaining:</strong>" . $credits . "</p>";
 
             $filetext .= "<hr />";
 

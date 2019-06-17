@@ -1,0 +1,54 @@
+
+          Test Old Script WCAG Evaluation
+
+          The How-To-Fix Report outlines issue found through a manual and automated evaluation.
+
+          Do not be alarmed at the size of this document. As you review it the report you may notice that some of the
+          issues are notated on multiple pages. If you designed the site using dynamic programming or a templates then once
+          you resolve and issue all pages with notating that issue should be resolved.
+
+          Through a Manual Evaluation, our Accessibility Expert will physically review the pages within the site to make
+          sure they are Perceivable – Operable – Understandable & Robust.
+
+          Through an automated Evaluation our Accessibility Expert will run each page through our accessibility script
+          to analysis the structure of the pages. This will give a deeper analysis if each page and return the number of
+          Errors – Alerts – Features – Structural Elements – HTML5 & Aria Constant Errors.
+
+          Please review the instructions below and let our Accessibility Expert know your timeframe for resolution.
+          If the timeframe is more than 90 days we can issue a partial Certification allowing you time to resolve issues and
+          receive a full certification. 
+
+          Instructions:
+
+          Each page that was evaluated is outlined in this document and depicts the following.
+
+          <ul>
+            <li>Errors: indicate accessibility errors that need to be fixed in order to pass a WCAG Certification, there may be some exceptions.</li>
+            <li>Alerts: Indicates warnings and should be looked at.</li>
+            <li>Features: indicate accessibility features - things that probably improve accessibility (though these should be verified).</li>
+            <li>Contrast Errors: Indicates issues with font color and or size against the background color  which can make it hard for some users to read.</li>
+            <li>Structural Elements: Outline the layout structure of the page</li>
+          </ul>
+
+          Review the elements for each page and check them off as they are completed. At the bottom of each section is an area for your developer to make
+          comments, timeframe notations, etc... if an element can not be resolved at this time.
+
+          When you have completed the review return the How-To-Fix document to your Accessibility Expert they well look it over and be in touch with the next
+          steps.
+
+          The goal is to eliminate as may of the errors as you can. Alerts will require close scrutiny - they likely represent an end user issue. Other
+          elements are to facilitate human analysis of accessibility and structure of the page. We include these so your developer can review them an check that
+          they are returning the intended outcome.
+          Evaluation
+
+          Manual Evaluation with Assisted Technology:
+
+          The following are issues we found through the use of Assisted Technology and human review. 
+          ***********************************************************************************
+          **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Accessibility Expert
+          will enter notes here &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  **
+          ***********************************************************************************
+
+          Evaluation Script:
