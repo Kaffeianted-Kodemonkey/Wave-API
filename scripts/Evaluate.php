@@ -1,5 +1,4 @@
 <?php
-
 //  include '../includes/nav.php';
 
 ?>
@@ -30,34 +29,37 @@
       <div class="container mt-5">
         <div class="row">
           <div class="col">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">File</th>
-                  <th scope="col">Evaluate</th>
-                </tr>
-              </thead>
-              <tbody>
-              <?php
-                //List all files for evalustion
-                //$dir = "../upload/";
-                $lists = glob('../upload/*');
-
-                foreach($lists as $l){
-                  if(is_file($l)){
-              ?>
+            <form action="api.php" method="post">
+              <table class="table">
+                <thead>
                   <tr>
-                    <td scope="row"><?php echo $l; ?></td>
-                    <td><button class="btn btm-sm btn-success" href="Evaluate.php">Evaluate</button></td>
+                    <th scope="col">File</th>
+                    <th scope="col">Evaluate</th>
                   </tr>
-              <?php
-                }
-              } ?>
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                <?php
+                  //List all files for evalustion
+                  //$dir = "../upload/";
+                  $lists = glob('../upload/*');
+
+                  foreach($lists as $l){
+                    $i = $i + 1;
+                    if(is_file($l)){
+                ?>
+                    <tr>
+                      <td scope="row"><label for="file-<?php echo $i; ?>"><?php echo $l; ?></label></td>
+                      <td><input type="checkbox" value="<?php echo $l; ?>" id="file-<?php echo $i; ?>" name="file-<?php echo $i; ?>"> </td>
+                    </tr>
+                <?php
+                  }
+                } ?>
+                </tbody>
+              </table>
+              <button type="submit" class="btn btm-sm btn-success">Evaluate</button>
+            </form>
           </div>
         </div>
-
       </div>
     </section>
   </body>

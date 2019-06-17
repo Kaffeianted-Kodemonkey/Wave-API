@@ -39,7 +39,7 @@
                 </div>
               </div>
 
-              <!-- <div class="form-group row">
+              <div class="form-group row">
                 <label for="username" class="col-sm-3 col-form-label">Username:</label>
                 <div class="col-sm-6">
                   <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
@@ -50,7 +50,7 @@
                 <div class="col-sm-6">
                   <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
                 </div>
-              </div> -->
+              </div>
 
               <!--  uploade sitmap.xml or csv for larger sites -->
               <div class="form-group row">

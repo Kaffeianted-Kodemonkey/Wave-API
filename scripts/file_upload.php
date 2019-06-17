@@ -4,23 +4,19 @@
   if(isset($_FILES['fupload'])){
     // Set Variables
     $client = $_POST['client'];
-    //$user = $_POST['username'];
-    //$pass = $_POST['password'];
-
+    $user = $_POST['username'];
+    $pass = $_POST['password'];
     $file = $_FILES['fupload'];
 
-    //echo "Client: " . $filename = $client . "<hr />";
+    //save to db
+    $save_db = file_info_db($client, $file['name'], $user, $pass);
 
     // call function to upload file
-    $upload = file_upload($file, $client);
-
-      //  echo $upload;
-
+    $upload = file_upload($file);
   }else{
     $e = 1;
     $error = "Please upload a file.";
   }
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -45,23 +41,29 @@
       </div>
 
       <hr />
-
-      <div class="container mt-5">
-        <div class="row">
-          <?php
-            if($e == 1){
-              echo "<div class='col text-center'>" . $error . "</div>";
-            }else{
-          ?>
-          <div class="col-4 mt-2">
-            <?php echo $upload; ?>
+      <form action="api.php" method="post">
+        <div class="container mt-5">
+          <div class="row">
+            <div class="col">
+              <h2><?php echo $save_db;?></h2>
+            </div>
           </div>
-          <div class="col">
-            <button class="btn btm-sm btn-success" href="Evaluate.php">Evaluate</button>
+          <hr />
+          <div class="row text-center">
+          <?php if($e == 1){ ?>
+            <div class='col text-center'><?php echo $error;?></div>
+          <?php }else{ ?>
+            <div class="col">
+              <h2><?php echo $file['name']; ?></h2>
+              <input type="hidden" name="file" value="<?php echo $file['name']; ?>">
+            </div>
+            <div class="col">
+              <button type="submit" class="btn btm-sm btn-success">Evaluate File</button>
+            </div>
+          <?php } ?>
           </div>
-        <?php } ?>
         </div>
-      </div>
+      </form>
     </section>
   </body>
 </html>
