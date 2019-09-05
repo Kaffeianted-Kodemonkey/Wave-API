@@ -34,35 +34,43 @@ include 'functions.php'; ?>
           $output = "<h1 class='p-3'>Testing - " . $level ."</h1>
           <hr />";
         }
-        ## check it runing single url or csv file ##
-        elseif(isset($_POST['url_page'])){
-          // set variable
-          $page = array($_POST['url_page']);
-        }
         ##  CSV File was uploaded ##
-        else{
+        elseif(isset($_FILES)){
           // call function to upload file
-          $sitemap = file_upload($_FILES['sitemap']);
+          $file = file_upload($_FILES['file']);
 
           //Read file add convert to array
-          if($sitemap['type'] == "text/csv"){
-            $page = array_map('str_getcsv', file("upload/" . $sitemap['name']));
+          if($file['type'] == "text/csv"){
+            $page_url = array_map('str_getcsv', file("upload/" . $file['name']));
+
+            $page = array();
+            foreach($page_url as $pg => $url){
+              foreach ($url as $key => $value) {
+                array_push($page, $value);
+              }
+            }
           }
           else{
             $error_message = "Invalid File Type. Select another file.";
           }
         }
+        ## check it runing single url or csv file ##
+        else {
+          // set variable
+          $page = array($_POST['url_page']);
+        }
 
         // Run Script for API
         // Loop through number of pages or URLS
         foreach ($page as $key => $value) {
+
           ## Testing API URL
           if(isset($_POST['testing'])){
             $apiurl = $value;
           }
           else{
             ## Live URL ##
-          $apiurl = "https://wave.webaim.org/api/request?key=iqt2JkJc1176&url=" . $value ."&evaldelay=5000&reporttype=" . $reporttype . "&username=" .$user . "&password=" . $pass;
+            $apiurl = "https://wave.webaim.org/api/request?key=iqt2JkJc1176&url=" . $value ."&evaldelay=5000&reporttype=" . $reporttype . "&username=" .$user . "&password=" . $pass;
           }
 
           ## GET Content form API ##
@@ -110,8 +118,8 @@ include 'functions.php'; ?>
                   </tr>
                   <!-- Page Rows -->
                   <tr>
-                    <th class='align-middle text-center' width='10%'><a href='" . $pageurl ."' target='_blank'>" . $pagetitle ."</a></th>
-                    <th class='align-middle text-center'><a href='". $waveurl ."' target='_blank'>" . $pageurl ."</a></th>
+                    <th class='align-middle text-center' width='10%'><a href='http://". $pageurl ." '>" . $pagetitle ."</a></th>
+                    <th class='align-middle text-center'><a href='". $waveurl ." '>" . $pageurl ."</a></th>
                     <td class='align-middle text-center'>" . $allitemcount . "</td>
                     <td class='align-middle text-center'>" . $totalelements . "</td>";
 
@@ -128,7 +136,7 @@ include 'functions.php'; ?>
           elseif ($key > 0 && $success == true) {
             $output .= "<!-- Page Rows -->
             <tr>
-              <th class='align-middle text-center'><a href='". $pageurl ." '>" . $pagetitle ."</a></th>
+              <th class='align-middle text-center'><a href='http://". $pageurl ." '>" . $pagetitle ."</a></th>
               <th class='align-middle text-center'><a href='". $waveurl ." '>" . "/" . $pageurl ."</a></th>
               <td class='align-middle text-center'>" . $allitemcount . "</td>
               <td class='align-middle text-center'>" . $totalelements . "</td>";
@@ -164,7 +172,6 @@ include 'functions.php'; ?>
       }
 
     ?>
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

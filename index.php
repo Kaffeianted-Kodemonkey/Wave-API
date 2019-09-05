@@ -69,9 +69,9 @@
 
               <!-- or uploade sitmap.xml for larger sites -->
               <div class="form-group row">
-                <label for="sitemap" class="col-sm-2 col-form-label">Upload sitmap:</label>
+                <label for="file" class="col-sm-2 col-form-label">Upload File:</label>
                 <div class="col-sm-6">
-                  <input type="file" class="form-control" name="sitemap" id="sitemap" placeholder="upload sitemap.xml">
+                  <input type="file" class="form-control" name="file" id="file" placeholder="Upload CSV file">
                 </div>
               </div>
               <!-- end sitmpa upload -->
@@ -80,7 +80,7 @@
                 <label for="reporttype" class="col-sm-2 col-form-label">Reprot Type:</label>
                 <div class="col-sm-6">
                   <select class="custom-select custom-select-md mb-3" name="reporttype">
-                    <option value="3"selected>Select Leve</option>
+                    <option value=""selected>Select Leve</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -102,7 +102,7 @@
 
               <div class="form-group row">
                 <div class="col-sm-10">
-                  <button type="submit" name="submit" class="btn btn-primary">Sign in</button>
+                  <button type="submit" name="submit" value="Evaluate"class="btn btn-primary">Submit</button>
                 </div>
               </div>
             </form>
