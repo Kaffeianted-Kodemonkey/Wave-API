@@ -2,7 +2,7 @@
 
 // upload sitemap.xml to loop through pages of a large sites
 function file_upload($sitemap){
-  if (($sitemap["type"] == "text/xml") || ($sitemap["type"] == "text/doc") | ($sitemap["type"] == "text/csv")){
+  if ($sitemap["type"] == "text/csv"){
     if ($sitemap["error"] > 0){
       echo "Return Code: " . $sitemap["error"] . "<br />";
     }

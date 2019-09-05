@@ -31,6 +31,24 @@
         <div class="row">
           <div class="col">
             <form action="api_script.php" method="post" enctype="multipart/form-data">
+              <div class="border border-danger rounded-sm p-2 mb-3">
+                <div class="custom-control custom-checkbox mb-3">
+                  <input type="checkbox" class="custom-control-input" name="testing" id="testing">
+                  <label class="custom-control-label" for="testing">Check for Testing</label>
+                </div>
+                <div class="form-group row">
+                  <label for="test_url" class="col-sm-2 col-form-label">Testing Level:</label>
+                  <div class="col-sm-6">
+                    <select class="custom-select custom-select-md mb-3" name="test_level">
+                      <option value=""selected>Select Testing Level</option>
+                      <option value="reporttype1">Level 1</option>
+                      <option value="reporttype2">Level 2</option>
+                      <option value="reporttype3">Level 3</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
               <div class="form-group row">
                 <label for="client" class="col-sm-2 col-form-label">Compan Name:</label>
                 <div class="col-sm-6">
@@ -38,25 +56,22 @@
                 </div>
               </div>
 
-              <!-- enter number of url/pages -->
-              <div class="border border-dark p-2 mb-3">
-                <div class="form-group row">
-                  <label for="pages" class="col-sm-2 col-form-label">Number of Pages:</label>
-                  <div class="col-sm-6">
-                    <input type="text" class="form-control" name="num_pages" id="num_pages" placeholder="# of Page to evaluate">
-                  </div>
-                </div>
+              <!-- enter url/pages -->
 
-                <div id="URLList"></div>
+              <div class="form-group row">
+                <label for="pages" class="col-sm-2 col-form-label">URL/Page:</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" name="url_page" id="url_page" placeholder="URL of Page to evaluate">
+                </div>
               </div>
 
+              <!-- <div id="URLList"></div> -->
+
               <!-- or uploade sitmap.xml for larger sites -->
-              <div class="border border-dark p-2 mb-3">
-                <div class="form-group row">
-                  <label for="sitemap" class="col-sm-2 col-form-label">Upload sitmap:</label>
-                  <div class="col-sm-6">
-                    <input type="file" class="form-control" name="sitemap" id="sitemap" placeholder="upload sitemap.xml">
-                  </div>
+              <div class="form-group row">
+                <label for="sitemap" class="col-sm-2 col-form-label">Upload sitmap:</label>
+                <div class="col-sm-6">
+                  <input type="file" class="form-control" name="sitemap" id="sitemap" placeholder="upload sitemap.xml">
                 </div>
               </div>
               <!-- end sitmpa upload -->
