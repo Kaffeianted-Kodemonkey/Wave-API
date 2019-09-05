@@ -62,10 +62,9 @@ include 'functions.php'; ?>
           }
           else{
             ## Live URL ##
-          echo $apiurl = "https://wave.webaim.org/api/request?key=iqt2JkJc1176&url=" . $value ."&evaldelay=5000&reporttype=" . $reporttype . "&username=" .$user . "&password=" . $pass;
+          $apiurl = "https://wave.webaim.org/api/request?key=iqt2JkJc1176&url=" . $value ."&evaldelay=5000&reporttype=" . $reporttype . "&username=" .$user . "&password=" . $pass;
           }
 
-          exit();
           ## GET Content form API ##
           $data = file_get_contents($apiurl);
 
@@ -91,17 +90,6 @@ include 'functions.php'; ?>
           $allitemcount   = $results['statistics']['allitemcount'];
           $totalelements  = $results['statistics']['totalelements'];
 
-          // variables returned form WAVE API reporttype 2
-          /*$catname_items          = $results['categories']['categoryname']['items'];
-          $catname_items_id       = $results['categories']['categoryname']['items']['id'];
-          $catname_items_id_count = $results['categories']['categoryname']['items']['id']['count'];
-          $catname_items_id_id    = $results['categories']['categoryname']['items']['id']['id'];
-          $catname_items_id_desc  = $results['categories']['categoryname']['items']['id']['description'];*/
-
-          // variables returned form WAVE API reporttype 3
-          /*$catname_items_id_xpaths = $results['categorie']['categoryname']['items']['id']['xpaths'];
-          $catname_items_id_xpaths_xpath = $results['categorie']['categoryname']['items']['id']['xpaths']['xpath'];*/
-
           if ($key== 0 && $success == true){
             // Convert results to output
             $output .= "<!-- Header Row -->
@@ -122,8 +110,8 @@ include 'functions.php'; ?>
                   </tr>
                   <!-- Page Rows -->
                   <tr>
-                    <th class='align-middle text-center' width='10%'><a href='http://". $pageurl ." '>" . $pagetitle ."</a></th>
-                    <th class='align-middle text-center'><a href='". $waveurl ." '>" . $pageurl ."</a></th>
+                    <th class='align-middle text-center' width='10%'><a href='" . $pageurl ."' target='_blank'>" . $pagetitle ."</a></th>
+                    <th class='align-middle text-center'><a href='". $waveurl ."' target='_blank'>" . $pageurl ."</a></th>
                     <td class='align-middle text-center'>" . $allitemcount . "</td>
                     <td class='align-middle text-center'>" . $totalelements . "</td>";
 
@@ -140,7 +128,7 @@ include 'functions.php'; ?>
           elseif ($key > 0 && $success == true) {
             $output .= "<!-- Page Rows -->
             <tr>
-              <th class='align-middle text-center'><a href='http://". $pageurl ." '>" . $pagetitle ."</a></th>
+              <th class='align-middle text-center'><a href='". $pageurl ." '>" . $pagetitle ."</a></th>
               <th class='align-middle text-center'><a href='". $waveurl ." '>" . "/" . $pageurl ."</a></th>
               <td class='align-middle text-center'>" . $allitemcount . "</td>
               <td class='align-middle text-center'>" . $totalelements . "</td>";

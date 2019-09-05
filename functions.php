@@ -45,13 +45,4 @@ function get_details($id){
 
 }
 
-//Convert HTML 2 text
-function convert_html_to_text($html, $ignore_error = false) {
-	return Soundasleep\Html2Text::convert($html, $ignore_error);
-}
-
-function fix_newlines($text) {
-	return Soundasleep\Html2Text::fixNewlines($text);
-}
-
 ?>
